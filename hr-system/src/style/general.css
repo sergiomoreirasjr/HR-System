@@ -1,0 +1,54 @@
+.container {
+  max-width: 400px; /* Defina a largura máxima desejada */
+  margin: 0 auto; /* Isso centraliza a div horizontalmente */
+  padding: 20px;
+  display: flex; /* Isso torna a div um container flexível */
+  flex-direction: column; /* Coluna de empilhamento flexível */
+  align-items: center;  /* Centraliza os itens horizontalmente */
+}
+
+/* Estilos para inputs */
+.container input,
+.container select {
+  width: calc(100% - 16px); /* Deixe todos os campos com o mesmo tamanho, subtraindo o padding */
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Estilize o hover e o foco conforme necessário */
+.container input:hover,
+.container input:focus,
+.container select:hover,
+.container select:focus {
+  border-color: #007bff;
+}
+
+/* Estilos para os botões */
+.container button {
+  width: calc(100% - 16px); /* Deixe o botão com o mesmo tamanho dos campos */
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px; /* Adicione um espaçamento inferior */
+}
+
+.container button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos específicos para o botão de cadastro */
+.container button.register {
+  width: auto; /* Defina a largura automática para o botão de cadastro */
+}
+
+/* Estilos para o campo de data */
+.container .date-input {
+  appearance: none; /* Remove o estilo padrão do sistema operacional */
+}

@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Instale o react-datepicker
+RUN npm install react-date-picker
+
 # Copy the entire project
 COPY . .
 
