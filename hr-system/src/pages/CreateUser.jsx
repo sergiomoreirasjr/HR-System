@@ -4,20 +4,22 @@ import {
   genderOptions,
   managerOptions,
   titleOptions,
+  seniorityOptions,
   userTypeOptions,
 } from "../staticData/selectOptions";
 
 const CreateUser = () => {
   const [formData, setFormData] = useState({
-    fullName: "", // criado
-    documentNumber: "", // criado
-    emailPersonal: "", // criado
-    phoneNumber: "", // criado
-    gender: "", // criado
-    userType: "", // criado
-    title: "", // criado
-    department: "", // criado
-    manager: "", // criado
+    fullName: "",
+    documentNumber: "",
+    emailPersonal: "",
+    phoneNumber: "",
+    gender: "",
+    userType: "",
+    title: "",
+    seniorityLevel: "",
+    department: "",
+    manager: "",
     loginActivationTime: "",
     loginExpirationTime: "",
     // userStatus: "", Só será alterado na tela de UpdateUser, criação definirá esse atributo fixamente como Ativo.
@@ -43,7 +45,7 @@ const CreateUser = () => {
         <input
           type="text"
           name="fullName"
-          placeholder="Digite o nome completo do novo funcionário."
+          placeholder="Nome completo do novo funcionário."
           value={formData.fullName}
           onChange={handleChange}
           required
@@ -51,7 +53,7 @@ const CreateUser = () => {
         <input
           type="number"
           name="documentNumber"
-          placeholder="Digite o CPF do novo funcionário."
+          placeholder="CPF do novo funcionário."
           value={formData.documentNumber}
           onChange={handleChange}
           required
@@ -59,7 +61,7 @@ const CreateUser = () => {
         <input
           type="email"
           name="emailPersonal"
-          placeholder="Digite o e-Mail pessoal do novo funcionário."
+          placeholder="e-Mail pessoal do novo funcionário."
           value={formData.emailPersonal}
           onChange={handleChange}
           required
@@ -67,20 +69,20 @@ const CreateUser = () => {
         <input
           type="tel"
           name="phoneNumber"
-          placeholder="Digite o número de telefone do novo funcionário."
+          placeholder="Número de telefone do novo funcionário."
           value={formData.phoneNumber}
           onChange={handleChange}
           required
         />
         <select
           name="gender"
-          placeholder="Selecione o Gênero do novo funcionário."
+          placeholder="Gênero do novo funcionário."
           value={formData.gender}
           onChange={handleChange}
           required
         >
           <option value="" disabled hidden>
-            Selecione o Gênero
+            Gênero
           </option>
           {genderOptions.map((genderOption) => (
             <option key={genderOption.value} value={genderOption.value}>
@@ -90,13 +92,13 @@ const CreateUser = () => {
         </select>
         <select
           name="userType"
-          placeholder="Selecione tipo do usuário que será criado para o novo funcionário."
+          placeholder="Tipo do usuário que será criado para o novo funcionário."
           value={formData.userType}
           onChange={handleChange}
           required
         >
           <option value="" disabled hidden>
-            Selecione o Tipo do Usuário
+            Tipo do Usuário
           </option>
           {userTypeOptions.map((userTypeOption) => (
             <option key={userTypeOption.value} value={userTypeOption.value}>
@@ -106,13 +108,13 @@ const CreateUser = () => {
         </select>
         <select
           name="title"
-          placeholder="Selecione o cargo do novo funcionário."
+          placeholder="Cargo do novo funcionário."
           value={formData.title}
           onChange={handleChange}
           required
         >
           <option value="" disabled hidden>
-            Selecione o Cargo do Usuário
+            Cargo do Usuário
           </option>
           {titleOptions.map((titleOption) => (
             <option key={titleOption.value} value={titleOption.value}>
@@ -121,14 +123,30 @@ const CreateUser = () => {
           ))}
         </select>
         <select
+          name="seniorityLevel"
+          placeholder="Senioridade do cargo do novo funcionário."
+          value={formData.seniorityLevel}
+          onChange={handleChange}
+          required
+        >
+          <option value="" disabled hidden>
+            Senioridade do Usuário
+          </option>
+          {seniorityOptions.map((seniorityOption) => (
+            <option key={seniorityOption.value} value={seniorityOption.value}>
+              {seniorityOption.label}
+            </option>
+          ))}
+        </select>
+        <select
           name="department"
-          placeholder="Selecione o nome do departamente que novo funcionário deve ser associado."
+          placeholder="Nome do departamento que novo funcionário deve ser associado."
           value={formData.department}
           onChange={handleChange}
           required
         >
           <option value="" disabled hidden>
-            Selecione o Departamento
+            Departamento
           </option>
           {departmentOptions.map((departmentOption) => (
             <option key={departmentOption.value} value={departmentOption.value}>
@@ -138,13 +156,13 @@ const CreateUser = () => {
         </select>
         <select
           name="manager"
-          placeholder="Selecione o gerente do novo funcionário."
+          placeholder="Gerente do novo funcionário."
           value={formData.manager}
           onChange={handleChange}
           required
         >
           <option value="" disabled hidden>
-            Selecione o Gerente do Usuário
+            Gerente do Usuário
           </option>
           {managerOptions.map((managerOption) => (
             <option key={managerOption.value} value={managerOption.value}>
@@ -154,7 +172,7 @@ const CreateUser = () => {
         </select>
 
         {/* Campo de seleção de data para loginActivationTime */}
-        <label htmlFor="loginActivationTime">Data de Ativação do Login:</label>
+        <label htmlFor="loginActivationTime">Data de Contratação:</label>
         <input
           type="date"
           id="loginActivationTime"
@@ -165,7 +183,7 @@ const CreateUser = () => {
         />
 
         {/* Campo de seleção de data para loginExpirationTime */}
-        <label htmlFor="loginExpirationTime">Data de Expiração do Login:</label>
+        <label htmlFor="loginExpirationTime">Data de Desligamento:</label>
         <input
           type="date"
           id="loginExpirationTime"

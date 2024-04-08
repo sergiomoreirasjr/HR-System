@@ -12,11 +12,13 @@ const genderOptions = [
   { value: 'Masculino', label: 'Masculino' },
   { value: 'Feminino', label: 'Feminino' },
   { value: 'Outro', label: 'Outro' },
+  { value: 'Prefiro não informar', label: 'Prefiro não informar' }
 ]
 
 const userTypeOptions = [
   { value: 'Funcionário', label: 'Funcionário' },
   { value: 'Prestador de Serviços', label: 'Prestador de Serviços' },
+  { value: 'Externo', label: 'Externo' },
   { value: 'Chão de Fábrica', label: 'Chão de Fábrica' },
 ]
 
@@ -24,6 +26,12 @@ const titleOptions = [
   { value: 'Diretor de TI', label: 'Diretor de TI' },
   { value: 'Operador de Máquinas I', label: 'Operador de Máquinas I' },
   { value: 'Coordenador de Marketing', label: 'Coordenador de Marketing' },
+]
+
+const seniorityOptions = [
+  { value: 'Júnior', label: 'Júnior' },
+  { value: 'Pleno', label: 'Pleno' },
+  { value: 'Sênior', label: 'Sênior' },
 ]
 
 const managerOptions = [
@@ -37,6 +45,7 @@ export {
   genderOptions,
   userTypeOptions,
   titleOptions,
+  seniorityOptions,
   managerOptions
 } 
   
