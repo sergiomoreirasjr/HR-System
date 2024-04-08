@@ -1,0 +1,34 @@
+Estilos para inputs
+input,
+select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Estilize o hover e o foco conforme necessário */
+input:hover,
+input:focus,
+select:hover,
+select:focus {
+  border-color: #007bff;
+}
+
+/* Estilos para os botões */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

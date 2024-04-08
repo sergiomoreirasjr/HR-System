@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Instale o react-datepicker
+RUN npm install react-date-picker
+
 # Copy the entire project
 COPY . .
 
@@ -21,6 +24,9 @@ FROM nginx:alpine
 
 # Copy build files to nginx public directory
 COPY --from=builder /app/build /usr/share/nginx/html
+
+# Adicionar os comandos abaixo ao final do seu Dockerfile
+COPY ./sql/schema.sql /docker-entrypoint-initdb.d/schema.sql
 
 # Expose port 80
 EXPOSE 80

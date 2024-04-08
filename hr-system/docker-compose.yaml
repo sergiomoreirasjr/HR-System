@@ -1,6 +1,21 @@
 version: '3.8'
 services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: SistemaRH
+      MYSQL_ROOT_PASSWORD: SistemaDeRH123!
+    ports:
+      - "3309:3306"
+    volumes:
+      # - ./data:/var/lib/mysql
+      # - mysql-data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+
   portal:
+    container_name: portal
     build:
       context: .
       dockerfile: Dockerfile
